@@ -21,7 +21,7 @@ const Navbar = () => {
         <Image src={assets.header_bg_color} className="w-full" alt="bg-img" />
       </div>
 
-      <nav className="flex items-center justify-between px-5 lg:px-8 xl:px-[8%] py-4 z-50 mt-5 border-b-[1px] border-gray-300 ">
+      <nav className=" flex items-center justify-between px-5 lg:px-8 xl:px-[8%] py-4 z-50 mt-5 border-b-[1px] border-gray-300 ">
         <a href="#top">
           <Image
             src={assets.logo}
