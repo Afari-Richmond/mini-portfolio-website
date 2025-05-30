@@ -2,9 +2,10 @@
 
 import { assets } from "@/assets/assets";
 import Image from "next/image";
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const Navbar = () => {
+  const [scroll, setScroll] = useState(false)
   const sideMenuRef = useRef();
 
   const openMenu = () => {
@@ -15,13 +16,28 @@ const Navbar = () => {
     sideMenuRef.current.style.transform = "translateX(16rem)";
   };
 
+  useEffect( () => {
+    window.addEventListener("scroll", () => {
+      if (scrollY > 50) {
+        setScroll(true)
+
+      } else {
+        setScroll(false)
+
+      }
+    })
+  })
+
   return (
     <>
       <div className="fixed top-0 right-0 w-11/12 -z-10 translate-y-[-80%]">
         <Image src={assets.header_bg_color} className="w-full" alt="bg-img" />
       </div>
 
-      <nav className=" flex items-center justify-between px-5 lg:px-8 xl:px-[8%] py-4 z-50 mt-5 border-b-[1px] border-gray-300 ">
+      <nav className= {`flex items-center justify-between px-5 lg:px-8 xl:px-[8%] py-4 z-50 mt-5 border-b-[1px] border-gray-300
+        
+        ${scroll ? 'bg-white bg-opacity-50 backdrop-blur-lg shadow-sm' : ''}
+        `} >
         <a href="#top">
           <Image
             src={assets.logo}
