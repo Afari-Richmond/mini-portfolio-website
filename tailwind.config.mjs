@@ -1,5 +1,4 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+const config = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx}",
     "./pages/**/*.{js,ts,jsx,tsx}",
@@ -12,7 +11,6 @@ module.exports = {
         darkHover: "#2A004A",
         darkTheme: "#11001f",
       },
-
       fontFamily: {
         outFit: ["Outfit", "sans-serif"],
         Ovo: ["Ovo", "serif"],
@@ -25,3 +23,5 @@ module.exports = {
   },
   plugins: [],
 };
+
+export default config;
